@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos | Pedro Oliveira</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="../script.js"></script>
+    <script defer src="artigos.js"></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+
+    <header class="header">
+        <div class="container nav-wrapper">
+            <nav class="nav-menu">
+                <a href="../index.html">Início</a>
+                <a href="../pagina_recursos/recursos.html">Recursos</a>
+                <a href="../index.html#cursos">Cursos</a>
+                <a href="../index.html#obras">Obras</a>
+                <a href="../index.html#projetos">Projetos</a>
+                <a href="../index.html#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="filtros" class="section reveal">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="articles-box">
+                    <h3>Explorar artigos 📰</h3>
+                    <p>Artigos de Pedro Oliveira e colegas.</p>
+                    <div class="filters-grid">
+                        <input type="text" id="searchInput" placeholder="Pesquisar artigos...">
+
+                        <select id="tagFilter">
+                            <option value="">Todas as tags</option>
+                            <option value="Cursos">Cursos</option>
+                            <option value="Jogos">Jogos</option>
+                            <option value="WEB">WEB</option>
+                        </select>
+
+                        <select id="authorFilter">
+                            <option value="">Todos os autores</option>
+                            <option value="Pedro Oliveira">Pedro Oliveira</option>
+                            <option value="Equipa Editorial">Equipa Editorial</option>
+                        </select>
+
+                        <select id="sortFilter">
+                            <option value="recent">Mais recente</option>
+                            <option value="old">Mais antigo</option>
+                            <option value="title">Título A-Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <div class="container">
+            <div id="articlesList" class="articles-list"></div>
+            <div style="text-align:center; margin-top:2rem;">
+                <button id="loadMoreBtn" class="btn-primary article-btn">Carregar mais</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos | Pedro Oliveira</title>
+
+    <!-- MESMO CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- scripts globais -->
+    <script defer src="../script.js"></script>
+    <script defer src="recursos.js"></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+
+    <!-- HEADER igual ao dos artigos -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <nav class="nav-menu">
+                <a href="../index.html">Início</a>
+                <a href="../index.html#cursos">Cursos</a>
+                <a href="../index.html#obras">Obras</a>
+                <a href="../index.html#projetos">Projetos</a>
+                <a href="../pagina_artigos/artigos.html">Artigos</a>
+                <a href="../index.html#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FILTROS (mesma estrutura dos artigos para reaproveitar CSS) -->
+    <section id="filtros" class="section reveal">
+        <div class="container">
+            <div class="filters-wrapper">
+
+                <div class="articles-box">
+                    <h3>Explorar recursos 📦</h3>
+                    <p>Downloads, exercícios e materiais de apoio.</p>
+
+                    <div class="filters-grid">
+
+                        <input type="text" id="searchInput" placeholder="Pesquisar recursos...">
+
+                        <select id="tagFilter">
+                            <option value="">Todas as tags</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="Exercícios">Exercícios</option>
+                            <option value="Guia">Guia</option>
+                            <option value="Projeto">Projeto</option>
+                        </select>
+
+                        <select id="sortFilter">
+                            <option value="recent">Mais recente</option>
+                            <option value="old">Mais antigo</option>
+                            <option value="title">Título A-Z</option>
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="section reveal">
+        <div class="container">
+
+            <!-- aqui reutiliza EXACTAMENTE o mesmo estilo dos artigos -->
+            <div id="resourcesList" class="articles-list"></div>
+
+            <div style="text-align:center; margin-top:2rem;">
+                <button id="loadMoreBtn" class="btn-primary article-btn">
+                    Carregar mais
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER igual ao site -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
