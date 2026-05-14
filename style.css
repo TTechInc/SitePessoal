@@ -415,3 +415,43 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 768px){
+
+  /* Só páginas de artigo */
+  .article-page .articles-box{
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .article-page h1{
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .article-page .article-meta{
+    font-size: 0.9rem;
+  }
+
+  .article-page .article-content{
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .article-page .article-content h2{
+    font-size: 1.3rem;
+  }
+
+  .article-page .nav-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+  }
+
+  .article-page .nav-menu a{
+    font-size: 0.95rem;
+  }
+
+}
