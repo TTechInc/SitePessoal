@@ -8,27 +8,11 @@
     "link": "artigos/artigo12252026_1934.html"
   },
   {
-    "title": "Grande exemplo de artigo #2",
-    "description": "Uma reflexão sobre ferramentas digitais e impacto.",
-    "tags": ["Cursos","Jogos"],
+    "title": "Aluno e Estudante",
+    "description": "Dilema entre ser aluno e ser estudante na vida académica. ",
+    "tags": ["Académico","Reflexões"],
     "author": "Pedro Oliveira",
-    "date": "2026-12-24T10:15:00",
-    "link": "artigos/artigo12242026_1015.html"
-  },
-  {
-    "title": "Grande exemplo de artigo #1",
-    "description": "Pensamento estratégico para execução consistente.",
-    "tags": ["WEB"],
-    "author": "Equipa Editorial",
-    "date": "2026-12-23T08:40:00",
-    "link": "artigos/artigo12232026_0840.html"
-  },
-  {
-    "title": "Grande exemplo de artigo #4",
-    "description": "Palavras aleatórias",
-    "tags": ["WEB"],
-    "author": "Pedro Oliveira",
-    "date": "2026-05-26T16:44:00",
-    "link": "artigos/artigo14052026_1644.html"
+    "date": "2026-06-07T22:26:00",
+    "link": "artigos/artigo07062026_2226.html"
   }
 ]
