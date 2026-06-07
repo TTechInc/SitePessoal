@@ -1,15 +1,15 @@
 [
   {
-    "title": "Grande exemplo de artigo #3",
-    "description": "Grande descrição do grande exemplo de artigo #3",
-    "tags": ["Cursos"],
+    "title": "Geração dos Programadores sem Informática",
+    "description": "Tendências atuais e dificuldades de aprendizado do baixo nível.",
+    "tags": ["Reflexões","Técnico"],
     "author": "Pedro Oliveira",
-    "date": "2026-12-25T19:34:00",
-    "link": "artigos/artigo12252026_1934.html"
+    "date": "2026-06-08T16:30:00",
+    "link": "artigos/artigo08062026_1630.html"
   },
   {
     "title": "Aluno e Estudante",
-    "description": "Dilema entre ser aluno e ser estudante na vida académica. ",
+    "description": "Dilema entre ser aluno e ser estudante na vida académica.",
     "tags": ["Académico","Reflexões"],
     "author": "Pedro Oliveira",
     "date": "2026-06-07T22:26:00",
