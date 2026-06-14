@@ -34,13 +34,10 @@ async function carregarLeaderboard(reset = false) {
 
             <td>${user.ID}</td>
 
-            <td>${user.NIVEL}</td>
-
-            <td>${Number(user.XP).toLocaleString("pt-PT")}</td>
-
-            <td>${user.NumProjetos}</td>
-
-            <td>${user.Bumps}</td>
+            <td>${user.NIVEL ?? 0}</td>
+            <td>${Number(user.XP ?? 0).toLocaleString("pt-PT")}</td>
+            <td>${user.NumProjetos ?? 0}</td>
+            <td>${user.Bumps ?? 0}</td>
 
         </tr>
         `;
@@ -49,30 +46,30 @@ async function carregarLeaderboard(reset = false) {
     atualizarCabecalho();
 }
 
-function atualizarCabecalho(){
+function atualizarCabecalho() {
 
     document
         .querySelectorAll(".leaderboard-table th")
         .forEach(el => el.classList.remove("leaderboard-active"));
 
-    if(ordenacaoAtual === "NIVEL")
+    if (ordenacaoAtual === "NIVEL")
         document.getElementById("sort-nivel")
-        .classList.add("leaderboard-active");
+            .classList.add("leaderboard-active");
 
-    if(ordenacaoAtual === "XP")
+    if (ordenacaoAtual === "XP")
         document.getElementById("sort-xp")
-        .classList.add("leaderboard-active");
+            .classList.add("leaderboard-active");
 
-    if(ordenacaoAtual === "NumProjetos")
+    if (ordenacaoAtual === "NumProjetos")
         document.getElementById("sort-projetos")
-        .classList.add("leaderboard-active");
+            .classList.add("leaderboard-active");
 
-    if(ordenacaoAtual === "Bumps")
+    if (ordenacaoAtual === "Bumps")
         document.getElementById("sort-bumps")
-        .classList.add("leaderboard-active");
+            .classList.add("leaderboard-active");
 }
 
-function ordenar(coluna){
+function ordenar(coluna) {
 
     ordenacaoAtual = coluna;
 
@@ -81,7 +78,7 @@ function ordenar(coluna){
     carregarLeaderboard(true);
 }
 
-function carregarMais(){
+function carregarMais() {
 
     paginaAtual++;
 
