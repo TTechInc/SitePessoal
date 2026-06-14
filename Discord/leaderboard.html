@@ -19,171 +19,169 @@
     <script defer src="leaderboard.js"></script>
 
     <style>
-
-        .leaderboard-box{
-            max-width:1100px;
+        .leaderboard-box {
+            max-width: 1100px;
         }
 
-        .leaderboard-table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:1.5rem;
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
         }
 
-        .leaderboard-table th{
-            color:var(--accent);
-            cursor:pointer;
-            user-select:none;
-            transition:.2s;
+        .leaderboard-table th {
+            color: var(--accent);
+            cursor: pointer;
+            user-select: none;
+            transition: .2s;
         }
 
-        .leaderboard-table th:hover{
-            opacity:.7;
+        .leaderboard-table th:hover {
+            opacity: .7;
         }
 
         .leaderboard-table th,
-        .leaderboard-table td{
-            padding:1rem;
-            text-align:center;
-            border-bottom:1px solid var(--border);
+        .leaderboard-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
         }
 
-        .leaderboard-table tbody tr:hover{
-            background:rgba(255,255,255,.03);
+        .leaderboard-table tbody tr:hover {
+            background: rgba(255, 255, 255, .03);
         }
 
-        .rank-medal{
-            font-size:1.25rem;
+        .rank-medal {
+            font-size: 1.25rem;
         }
 
-        .leaderboard-info{
-            color:var(--muted);
-            margin-bottom:1rem;
+        .leaderboard-info {
+            color: var(--muted);
+            margin-bottom: 1rem;
         }
 
-        .leaderboard-controls{
-            display:flex;
-            justify-content:center;
-            margin-top:2rem;
+        .leaderboard-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
         }
 
-        .leaderboard-active{
-            color:white !important;
+        .leaderboard-active {
+            color: white !important;
         }
 
-        @media(max-width:768px){
+        .hero.artigos-hero {
+            min-height: 28vh;
+        }
 
-            .leaderboard-table{
-                font-size:.85rem;
+        @media(max-width:768px) {
+
+            .leaderboard-table {
+                font-size: .85rem;
             }
 
             .leaderboard-table th,
-            .leaderboard-table td{
-                padding:.7rem .3rem;
+            .leaderboard-table td {
+                padding: .7rem .3rem;
             }
 
         }
-
     </style>
 
 </head>
 
 <body>
 
-<div class="bg-glow"></div>
+    <div class="bg-glow"></div>
 
-<header class="header">
-    <div class="container nav-wrapper">
-        <nav class="nav-menu">
-            <a href="../index.html">Início</a>
-            <a href="../pagina_artigos/artigos.html">Artigos</a>
-            <a href="leaderboard.html">Leaderboard</a>
-        </nav>
-    </div>
-</header>
+    <header class="header">
+        <div class="container nav-wrapper">
+            <nav class="nav-menu">
+                <a href="../index.html">Início</a>
+                <a href="../pagina_artigos/artigos.html">Artigos</a>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero artigos-hero container">
+    <section class="hero artigos-hero container">
 
-    <div class="hero-content reveal">
+        <div class="hero-content reveal">
 
-        <p class="hero-tag">COMUNIDADE DISCORD</p>
+            <p class="hero-tag">COMUNIDADE DISCORD</p>
 
-        <h1>Leaderboard</h1>
+            <h1>Leaderboard</h1>
 
-        <p class="hero-description">
-            Ranking da comunidade baseado na atividade, experiência e participação.
-        </p>
-
-    </div>
-
-</section>
-
-<section class="section reveal">
-
-    <div class="container articles-box leaderboard-box">
-
-        <h3>Ranking 🏆</h3>
-
-        <p class="leaderboard-info">
-            Clique nos títulos das colunas para alterar a ordenação.
-        </p>
-
-        <table class="leaderboard-table">
-
-            <thead>
-
-                <tr>
-
-                    <th>#</th>
-
-                    <th>ID</th>
-
-                    <th id="sort-nivel" onclick="ordenar('NIVEL')">
-                        Nível ▼
-                    </th>
-
-                    <th id="sort-xp" onclick="ordenar('XP')">
-                        XP
-                    </th>
-
-                    <th id="sort-projetos" onclick="ordenar('NumProjetos')">
-                        Projetos
-                    </th>
-
-                    <th id="sort-bumps" onclick="ordenar('Bumps')">
-                        Bumps
-                    </th>
-
-                </tr>
-
-            </thead>
-
-            <tbody id="leaderboard-body"></tbody>
-
-        </table>
-
-        <div class="leaderboard-controls">
-
-            <button
-                id="loadMoreBtn"
-                class="btn-primary"
-                onclick="carregarMais()">
-
-                Carregar Mais
-
-            </button>
+            <p class="hero-description">
+                Ranking da comunidade baseado na atividade, experiência e participação.
+            </p>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <section class="section reveal">
 
-<footer class="footer">
-    <div class="container">
-        <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
-    </div>
-</footer>
+        <div class="container articles-box leaderboard-box">
+
+            <h3>Ranking 🏆</h3>
+
+            <p class="leaderboard-info">
+                Clique nos títulos das colunas para alterar a ordenação.
+            </p>
+
+            <table class="leaderboard-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+
+                        <th>ID</th>
+
+                        <th id="sort-nivel" onclick="ordenar('NIVEL')">
+                            Nível ▼
+                        </th>
+
+                        <th id="sort-xp" onclick="ordenar('XP')">
+                            XP
+                        </th>
+
+                        <th id="sort-projetos" onclick="ordenar('NumProjetos')">
+                            Projetos
+                        </th>
+
+                        <th id="sort-bumps" onclick="ordenar('Bumps')">
+                            Bumps
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="leaderboard-body"></tbody>
+
+            </table>
+
+            <div class="leaderboard-controls">
+
+                <button id="loadMoreBtn" class="btn-primary" onclick="carregarMais()">
+
+                    Carregar Mais
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 
