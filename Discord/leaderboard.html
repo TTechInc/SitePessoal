@@ -74,6 +74,23 @@
             min-height: 28vh;
         }
 
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+
         @media(max-width:768px) {
 
             .leaderboard-table {
@@ -129,39 +146,41 @@
                 Clique nos títulos das colunas para alterar a ordenação.
             </p>
 
-            <table class="leaderboard-table">
+            <div class="table-wrapper">
+                <table class="leaderboard-table">
 
-                <thead>
+                    <thead>
 
-                    <tr>
+                        <tr>
 
-                        <th>#</th>
+                            <th>#</th>
 
-                        <th>Nome</th>
+                            <th>Nome</th>
 
-                        <th id="sort-nivel" onclick="ordenar('NIVEL')">
-                            Nível ▼
-                        </th>
+                            <th id="sort-nivel" onclick="ordenar('NIVEL')">
+                                Nível ▼
+                            </th>
 
-                        <th id="sort-xp" onclick="ordenar('XP')">
-                            XP
-                        </th>
+                            <th id="sort-xp" onclick="ordenar('XP')">
+                                XP
+                            </th>
 
-                        <th id="sort-projetos" onclick="ordenar('NumProjetos')">
-                            Projetos
-                        </th>
+                            <th id="sort-projetos" onclick="ordenar('NumProjetos')">
+                                Projetos
+                            </th>
 
-                        <th id="sort-bumps" onclick="ordenar('Bumps')">
-                            Bumps
-                        </th>
+                            <th id="sort-bumps" onclick="ordenar('Bumps')">
+                                Bumps
+                            </th>
 
-                    </tr>
+                        </tr>
 
-                </thead>
+                    </thead>
 
-                <tbody id="leaderboard-body"></tbody>
+                    <tbody id="leaderboard-body"></tbody>
 
-            </table>
+                </table>
+            </div>
 
             <div class="leaderboard-controls">
 
