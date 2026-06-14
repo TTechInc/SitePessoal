@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard Discord</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .leaderboard-container {
+            width: 90%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="leaderboard-container">
+
+        <h1>Leaderboard Discord</h1>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>XP</th>
+                    <th>Nível</th>
+                    <th>Projetos</th>
+                    <th>Bumps</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboard-body">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="leaderboard.js"></script>
+
+</body>
+
+</html>
