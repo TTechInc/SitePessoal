@@ -1,106 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Leaderboard Discord</title>
+    <title>Leaderboard Discord | Pedro Oliveira</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
 
+    <script defer src="../script.js"></script>
+    <script defer src="leaderboard.js"></script>
+
     <style>
-        .leaderboard-section {
 
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-
+        .leaderboard-box{
+            max-width:1100px;
         }
 
-        .leaderboard-title {
-
-            text-align: center;
-            margin-bottom: 40px;
-
+        .leaderboard-table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:1.5rem;
         }
 
-        .leaderboard-table {
-
-            width: 100%;
-            border-collapse: collapse;
-
+        .leaderboard-table th{
+            color:var(--accent);
+            cursor:pointer;
+            user-select:none;
+            transition:.2s;
         }
 
-        .leaderboard-table th {
-
-            cursor: pointer;
-            transition: .2s;
-
-        }
-
-        .leaderboard-table th:hover {
-
-            opacity: .7;
-
+        .leaderboard-table th:hover{
+            opacity:.7;
         }
 
         .leaderboard-table th,
-        .leaderboard-table td {
+        .leaderboard-table td{
+            padding:1rem;
+            text-align:center;
+            border-bottom:1px solid var(--border);
+        }
 
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        .leaderboard-table tbody tr:hover{
+            background:rgba(255,255,255,.03);
+        }
+
+        .rank-medal{
+            font-size:1.25rem;
+        }
+
+        .leaderboard-info{
+            color:var(--muted);
+            margin-bottom:1rem;
+        }
+
+        .leaderboard-controls{
+            display:flex;
+            justify-content:center;
+            margin-top:2rem;
+        }
+
+        .leaderboard-active{
+            color:white !important;
+        }
+
+        @media(max-width:768px){
+
+            .leaderboard-table{
+                font-size:.85rem;
+            }
+
+            .leaderboard-table th,
+            .leaderboard-table td{
+                padding:.7rem .3rem;
+            }
 
         }
 
-        .load-more {
-
-            margin-top: 30px;
-            text-align: center;
-
-        }
-
-        .load-more button {
-
-            padding: 12px 25px;
-            cursor: pointer;
-            font-size: 16px;
-
-        }
-
-        .rank1 {
-
-            color: gold;
-            font-weight: bold;
-
-        }
-
-        .rank2 {
-
-            color: silver;
-            font-weight: bold;
-
-        }
-
-        .rank3 {
-
-            color: #cd7f32;
-            font-weight: bold;
-
-        }
     </style>
 
 </head>
 
 <body>
 
-    <section class="leaderboard-section">
+<div class="bg-glow"></div>
 
-        <h1 class="leaderboard-title">
-            Discord Leaderboard
-        </h1>
+<header class="header">
+    <div class="container nav-wrapper">
+        <nav class="nav-menu">
+            <a href="../index.html">Início</a>
+            <a href="../pagina_artigos/artigos.html">Artigos</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero artigos-hero container">
+
+    <div class="hero-content reveal">
+
+        <p class="hero-tag">COMUNIDADE DISCORD</p>
+
+        <h1>Leaderboard</h1>
+
+        <p class="hero-description">
+            Ranking da comunidade baseado na atividade, experiência e participação.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section reveal">
+
+    <div class="container articles-box leaderboard-box">
+
+        <h3>Ranking 🏆</h3>
+
+        <p class="leaderboard-info">
+            Clique nos títulos das colunas para alterar a ordenação.
+        </p>
 
         <table class="leaderboard-table">
 
@@ -112,43 +138,52 @@
 
                     <th>ID</th>
 
-                    <th onclick="ordenar('XP')">
-                        XP ▼
-                    </th>
-
-                    <th onclick="ordenar('NIVEL')">
+                    <th id="sort-nivel" onclick="ordenar('NIVEL')">
                         Nível ▼
                     </th>
 
-                    <th onclick="ordenar('NumProjetos')">
-                        Projetos ▼
+                    <th id="sort-xp" onclick="ordenar('XP')">
+                        XP
                     </th>
 
-                    <th onclick="ordenar('Bumps')">
-                        Bumps ▼
+                    <th id="sort-projetos" onclick="ordenar('NumProjetos')">
+                        Projetos
+                    </th>
+
+                    <th id="sort-bumps" onclick="ordenar('Bumps')">
+                        Bumps
                     </th>
 
                 </tr>
 
             </thead>
 
-            <tbody id="leaderboard-body">
-
-            </tbody>
+            <tbody id="leaderboard-body"></tbody>
 
         </table>
 
-        <div class="load-more">
+        <div class="leaderboard-controls">
 
-            <button onclick="carregarMais()">
+            <button
+                id="loadMoreBtn"
+                class="btn-primary"
+                onclick="carregarMais()">
+
                 Carregar Mais
+
             </button>
 
         </div>
 
-    </section>
+    </div>
 
-    <script src="leaderboard.js"></script>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+    </div>
+</footer>
 
 </body>
 

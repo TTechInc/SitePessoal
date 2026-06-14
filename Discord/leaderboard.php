@@ -26,7 +26,7 @@ $allowedColumns = [
     "Bumps"
 ];
 
-$sort = $_GET["sort"] ?? "XP";
+$sort = $_GET["sort"] ?? "NIVEL";
 
 if (!in_array($sort, $allowedColumns)) {
     $sort = "XP";
