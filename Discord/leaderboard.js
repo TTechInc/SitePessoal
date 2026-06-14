@@ -32,7 +32,7 @@ async function carregarLeaderboard(reset = false) {
                 ${ranking}
             </td>
 
-            <td>${user.NOME || "Utilizador Desconhecido"}</td>
+            <td>${user.Nome || "Utilizador Desconhecido"}</td>
 
             <td>${user.NIVEL ?? 0}</td>
             <td>${Number(user.XP ?? 0).toLocaleString("pt-PT")}</td>
