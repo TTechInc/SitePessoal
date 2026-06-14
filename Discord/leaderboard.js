@@ -1,17 +1,25 @@
-async function carregarLeaderboard() {
+let paginaAtual = 1;
+let ordenacaoAtual = "XP";
 
-    const response = await fetch("leaderboard.php");
+const tbody = document.querySelector("#leaderboard-body");
+
+async function carregarLeaderboard(reset = false) {
+
+    const response = await fetch(
+        `leaderboard.php?sort=${ordenacaoAtual}&page=${paginaAtual}`
+    );
+
     const dados = await response.json();
 
-    const tbody = document.querySelector("#leaderboard-body");
-
-    tbody.innerHTML = "";
+    if(reset){
+        tbody.innerHTML = "";
+    }
 
     dados.forEach((user, index) => {
 
         tbody.innerHTML += `
             <tr>
-                <td>${index + 1}</td>
+                <td>${((paginaAtual - 1) * 25) + index + 1}</td>
                 <td>${user.ID}</td>
                 <td>${user.XP}</td>
                 <td>${user.NIVEL}</td>
@@ -20,6 +28,23 @@ async function carregarLeaderboard() {
             </tr>
         `;
     });
+
+}
+
+function ordenar(coluna){
+
+    ordenacaoAtual = coluna;
+    paginaAtual = 1;
+
+    carregarLeaderboard(true);
+
+}
+
+function carregarMais(){
+
+    paginaAtual++;
+    carregarLeaderboard();
+
 }
 
 carregarLeaderboard();

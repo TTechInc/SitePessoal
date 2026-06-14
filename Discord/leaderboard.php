@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header('Content-Type: application/json');
 
 $conn = new mysqli(
@@ -16,6 +19,28 @@ if ($conn->connect_error) {
     ]));
 }
 
+$allowedColumns = [
+    "XP",
+    "NIVEL",
+    "NumProjetos",
+    "Bumps"
+];
+
+$sort = $_GET["sort"] ?? "XP";
+
+if (!in_array($sort, $allowedColumns)) {
+    $sort = "XP";
+}
+
+$page = intval($_GET["page"] ?? 1);
+
+if ($page < 1) {
+    $page = 1;
+}
+
+$limit = 25;
+$offset = ($page - 1) * $limit;
+
 $sql = "
 SELECT
     ID,
@@ -24,18 +49,18 @@ SELECT
     NumProjetos,
     Bumps
 FROM users
-ORDER BY XP DESC
+ORDER BY $sort DESC
+LIMIT $limit OFFSET $offset
 ";
 
 $result = $conn->query($sql);
 
-$users = [];
+$data = [];
 
 while($row = $result->fetch_assoc()) {
-    $users[] = $row;
+    $data[] = $row;
 }
 
-echo json_encode($users);
+echo json_encode($data);
 
 $conn->close();
-?>
