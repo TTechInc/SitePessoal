@@ -43,7 +43,7 @@ $offset = ($page - 1) * $limit;
 
 $sql = "
 SELECT
-    ID,
+    Nome,
     XP,
     NIVEL,
     NumProjetos,
