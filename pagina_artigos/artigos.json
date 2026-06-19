@@ -1,5 +1,13 @@
 [
   {
+    "title": "Informática como Ciência e Engenharia",
+    "description": "Tendência evolutiva da informática como área de estudo.",
+    "tags": ["Académico","Reflexões"],
+    "author": "Pedro Oliveira",
+    "date": "2026-06-19T16:17:11",
+    "link": "artigos/artigo19062026_1711.html"
+  },
+  {
     "title": "Geração dos Programadores Superficiais",
     "description": "Tendências atuais e dificuldades de aprendizado do baixo nível.",
     "tags": ["Reflexões","Técnico"],
