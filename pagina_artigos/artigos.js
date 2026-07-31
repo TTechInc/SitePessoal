@@ -1,5 +1,5 @@
 let articles = [];
-let visibleCount = 2;
+let visibleCount = 3;
 
 fetch('artigos.json')
   .then(res => res.json())
