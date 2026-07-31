@@ -1,7 +1,7 @@
 let articles = [];
 let visibleCount = 3;
 
-fetch(`artigos.json?v=${Date.now()}`)
+fetch(`artigos.json?v=4`)
   .then(res => res.json())
   .then(data => {
     articles = data;
