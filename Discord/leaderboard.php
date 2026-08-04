@@ -5,11 +5,13 @@ error_reporting(E_ALL);
 
 header('Content-Type: application/json');
 
+require_once __DIR__ . '/../../config/database.php';
+
 $conn = new mysqli(
-    "db-ash-06.apollopanel.com",
-    "u218139_VJCw0gZmfO",
-    "zTZ9K50JND-b~u6vKTZ0~ZYV",
-    "s218139_users_data",
+    $db_host,
+    $db_user,
+    $db_pass,
+    $db_name,
     3306
 );
 
