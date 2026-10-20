@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Leaderboard — estilos específicos (usa os tokens de ../style.css)
+   ========================================================================== */
+
+/* hero compacto (o hero global ocupa o ecrã inteiro) */
+.leaderboard-hero {
+    min-height: auto;
+    padding: 4rem 0 2rem;
+}
+
+.leaderboard-hero h1 {
+    font-size: clamp(2.4rem, 7vw, 4rem);
+}
+
+.leaderboard-hero .hero-description {
+    margin-bottom: 0;
+}
+
+.leaderboard-box {
+    max-width: 1100px;
+    padding: 2.6rem 2rem 2.2rem;
+}
+
+.leaderboard-info {
+    margin-bottom: .5rem !important;
+}
+
+/* tabela ------------------------------------------------------------------ */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, .02);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: .95rem 1rem;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.leaderboard-table thead th {
+    font-family: var(--font-display);
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: rgba(255, 255, 255, .03);
+    user-select: none;
+}
+
+.col-name,
+.leaderboard-table td.name {
+    text-align: left !important;
+}
+
+.col-rank {
+    width: 64px;
+}
+
+/* botões de ordenação */
+.sort-btn {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: .2rem .4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.sort-btn:hover {
+    color: var(--text-strong);
+}
+
+.sort-btn::after {
+    content: "";
+    display: inline-block;
+    margin-left: .45rem;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    opacity: 0;
+    transform: translateY(-1px);
+    transition: opacity .2s;
+}
+
+.leaderboard-table th:hover .sort-btn::after {
+    opacity: .35;
+}
+
+.leaderboard-table th[aria-sort="descending"] {
+    color: var(--accent);
+}
+
+.leaderboard-table th[aria-sort="descending"] .sort-btn {
+    color: var(--accent);
+}
+
+.leaderboard-table th[aria-sort="descending"] .sort-btn::after {
+    opacity: 1;
+}
+
+/* linhas */
+.leaderboard-table tbody tr {
+    transition: background .2s;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: rgba(255, 255, 255, .04);
+}
+
+.leaderboard-table td {
+    color: var(--text);
+}
+
+.leaderboard-table td.name {
+    font-weight: 600;
+    color: var(--text-strong);
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rank-medal {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+/* pódio */
+.leaderboard-table tbody tr.top-1 { background: linear-gradient(90deg, rgba(250, 204, 21, .10), transparent 70%); }
+.leaderboard-table tbody tr.top-2 { background: linear-gradient(90deg, rgba(203, 213, 225, .08), transparent 70%); }
+.leaderboard-table tbody tr.top-3 { background: linear-gradient(90deg, rgba(251, 146, 60, .09), transparent 70%); }
+
+/* destaque da coluna ordenada */
+.leaderboard-table td.is-sorted {
+    color: var(--text-strong);
+    font-weight: 600;
+}
+
+/* estados (a carregar / vazio / erro) */
+.leaderboard-table .state-row td {
+    padding: 2.4rem 1rem;
+    color: var(--muted);
+    white-space: normal;
+}
+
+.leaderboard-table .state-row.error td {
+    color: #fca5a5;
+}
+
+.leaderboard-status {
+    min-height: 1.4em;
+    margin: 1rem auto 0 !important;
+    font-size: .88rem;
+    color: var(--muted) !important;
+}
+
+.leaderboard-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: .8rem;
+}
+
+.leaderboard-controls .btn-primary {
+    border: 0;
+    padding: .85rem 2.6rem;
+}
+
+.leaderboard-controls .btn-primary[hidden] {
+    display: none;
+}
+
+.leaderboard-controls .btn-primary:disabled {
+    opacity: .6;
+    cursor: wait;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .leaderboard-hero {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .leaderboard-box {
+        padding: 2rem .8rem 1.6rem;
+    }
+
+    .leaderboard-table {
+        font-size: .85rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: .7rem .45rem;
+    }
+
+    .leaderboard-table thead th {
+        font-size: .68rem;
+        letter-spacing: .06em;
+    }
+
+    .col-rank {
+        width: 44px;
+    }
+
+    .leaderboard-table td.name {
+        max-width: 140px;
+    }
+}
