@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070a12">
+    <meta name="description" content="Artigos, reflexões e conteúdos técnicos e académicos de Pedro Oliveira e colegas.">
     <title>Artigos | Pedro Oliveira</title>
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9H047FNG0F"></script>
     <script>
@@ -20,66 +30,81 @@
 </head>
 
 <body>
-    <div class="bg-glow"></div>
+    <a href="#main" class="skip-link">Saltar para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
 
-    <header class="header">
+    <header class="header header--collapsible">
         <div class="container nav-wrapper">
-            <nav class="nav-menu">
+            <a href="../index.html" class="brand" aria-label="Pedro Oliveira — início">
+                <span class="brand-name">Pedro Oliveira</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-menu" id="menu" aria-label="Navegação principal">
                 <a href="../index.html">Início</a>
                 <!--<a href="../pagina_recursos/recursos.html">Recursos</a>-->
                 <a href="../index.html#cursos">Cursos</a>
                 <!--<a href="../index.html#obras">Obras</a>-->
                 <a href="../index.html#projetos">Projetos</a>
+                <a href="artigos.html" aria-current="page">Artigos</a>
                 <a href="../index.html#contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <section id="filtros" class="section reveal">
-        <div class="container">
-            <div class="filters-wrapper">
-                <div class="articles-box">
-                    <h3>Explorar artigos 📰</h3>
-                    <p>Artigos de Pedro Oliveira e colegas.</p>
-                    <div class="filters-grid">
-                        <input type="text" id="searchInput" placeholder="Pesquisar artigos...">
+    <main id="main">
+        <section id="filtros" class="section reveal">
+            <div class="container">
+                <div class="filters-wrapper">
+                    <div class="articles-box">
+                        <h1 class="page-title">Explorar artigos</h1>
+                        <p>Artigos de Pedro Oliveira e colegas.</p>
+                        <div class="filters-grid" role="search">
+                            <input type="search" id="searchInput" placeholder="Pesquisar artigos..."
+                                aria-label="Pesquisar artigos">
 
-                        <select id="tagFilter">
-                            <option value="">Todas as tags</option>
-                            <option value="Académico">Académico</option>
-                            <option value="Reflexões">Reflexões</option>
-                            <option value="Técnico">Técnico</option>
-                        </select>
+                            <select id="tagFilter" aria-label="Filtrar por tag">
+                                <option value="">Todas as tags</option>
+                                <option value="Académico">Académico</option>
+                                <option value="Reflexões">Reflexões</option>
+                                <option value="Técnico">Técnico</option>
+                            </select>
 
-                        <select id="authorFilter">
-                            <option value="">Todos os autores</option>
-                            <option value="Pedro Oliveira">Pedro Oliveira</option>
-                            <option value="Outros">Outros</option>
-                        </select>
+                            <select id="authorFilter" aria-label="Filtrar por autor">
+                                <option value="">Todos os autores</option>
+                                <option value="Pedro Oliveira">Pedro Oliveira</option>
+                                <option value="Outros">Outros</option>
+                            </select>
 
-                        <select id="sortFilter">
-                            <option value="recent">Mais recente</option>
-                            <option value="old">Mais antigo</option>
-                            <option value="title">Título A-Z</option>
-                        </select>
+                            <select id="sortFilter" aria-label="Ordenar artigos">
+                                <option value="recent">Mais recente</option>
+                                <option value="old">Mais antigo</option>
+                                <option value="title">Título A-Z</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section reveal">
-        <div class="container">
-            <div id="articlesList" class="articles-list"></div>
-            <div style="text-align:center; margin-top:2rem;">
-                <button id="loadMoreBtn" class="btn-primary article-btn">Carregar mais</button>
+        <section class="section reveal" style="padding-top:1.5rem">
+            <div class="container">
+                <div id="articlesList" class="articles-list" aria-live="polite"></div>
+                <div class="load-more-wrap">
+                    <button id="loadMoreBtn" class="btn-primary article-btn">Carregar mais</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
             <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+            <a href="../index.html">← Voltar ao início</a>
         </div>
     </footer>
 </body>
