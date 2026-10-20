@@ -4,18 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Informações de exibição: -->
+    <meta name="theme-color" content="#070a12">
+    <meta name="description" content="Portefólio de Pedro Oliveira: percurso, competências, cursos lecionados e projetos desenvolvidos.">
+
+    <!-- Informações de exibição: -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
     <meta property="og:title" content="Pedro Oliveira - Desenvolvedor, programador e informático.">
     <meta property="og:description" content="Um espaço dedicado à apresentação do meu percurso, competências, cursos lecionados e projetos desenvolvidos.">
     <meta property="og:site_name" content="Pedro Oliveira - Portefólio Profissional">
-    <!--Informações da página: -->
+    <meta name="twitter:card" content="summary">
+
+    <!-- Informações da página: -->
     <title>Pedro Oliveira | Portefólio Profissional</title>
+
+    <!-- Marca o documento como "com JS" antes de pintar (evita flash e permite fallback sem JS) -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9H047FNG0F"></script>
     <script>
@@ -27,13 +38,23 @@
     <script defer src="script.js"></script>
 </head>
 
-<body>
+<body id="top">
 
-    <div class="bg-glow"></div>
+    <a href="#main" class="skip-link">Saltar para o conteúdo</a>
+    <div class="bg-glow" aria-hidden="true"></div>
 
-    <header class="header">
+    <header class="header header--collapsible">
         <div class="container nav-wrapper">
-            <nav class="nav-menu">
+            <a href="#top" class="brand" aria-label="Pedro Oliveira — início">
+                <span class="brand-name">Pedro Oliveira</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-menu" id="menu" aria-label="Navegação principal">
                 <a href="#sobre">Sobre</a>
                 <!--<a href="pagina_recursos/recursos.html">Recursos</a>-->
                 <a href="#cursos">Cursos</a>
@@ -45,117 +66,186 @@
         </div>
     </header>
 
-    <section class="hero container">
-        <div class="hero-content reveal">
-            <p class="hero-tag">PORTEFÓLIO PROFISSIONAL</p>
-            <h1>Pedro Oliveira</h1>
-            <h2 class="hero-subtitle">Desenvolvedor, programador e informático.</h2>
-            <p class="hero-description">
-                Um espaço dedicado à apresentação do meu percurso, competências, cursos lecionados e projetos desenvolvidos.
-            </p>
-            <a href="#contacto" class="btn-primary">Entrar em contacto
-                <img src="assets/contacto_icon.png" width="18" height="18"
-                    style="margin-left: 5px; vertical-align:-3px;">
+    <main id="main">
+
+        <section class="hero container">
+            <div class="hero-content reveal">
+                <p class="hero-tag">Portefólio profissional</p>
+                <h1>Pedro Oliveira</h1>
+                <p class="hero-subtitle">Desenvolvedor, programador e <strong>informático.</strong></p>
+                <p class="hero-description">
+                    Um espaço dedicado à apresentação do meu percurso, competências, cursos lecionados e projetos desenvolvidos.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn-primary">Entrar em contacto
+                        <img class="btn-icon" src="assets/contacto_icon.png" width="18" height="18" alt="">
+                    </a>
+                </div>
+            </div>
+            <a href="#sobre" class="scroll-down" aria-label="Ver o resto do site">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
             </a>
-        </div>
-    </section>
+        </section>
 
-    <section id="sobre" class="section container reveal">
-        <h3>Sobre 🧑‍💼</h3>
-        <p>Chamo-me Pedro 👋. Este espaço apresenta a minha identidade profissional, experiência, visão estratégica e
-            contributos em diversas áreas de atuação 🚀.</p>
-    </section>
+        <section id="sobre" class="section container reveal">
+            <div class="section-head">
+                <span class="eyebrow">01 — Sobre</span>
+                <h2>Quem sou eu</h2>
+            </div>
+            <div class="about">
+                <p>Chamo-me Pedro 👋. Este espaço apresenta a minha identidade profissional, experiência, visão
+                    estratégica e contributos em diversas áreas de atuação.</p>
+            </div>
+        </section>
 
-    <!-- Habilitações académicas a serem adicionadas futuramente 
-    <section id="habilitacoes" class="section container reveal">
-        <h3>Habilitações 🎓</h3>
-        <div class="grid">
-            <div class="card">Licenciatura / Mestrado</div>
-            <div class="card">Certificações Profissionais</div>
-            <div class="card">Especializações Técnicas</div>
-        </div>
-    </section>
-    -->
+        <!-- Habilitações académicas a serem adicionadas futuramente
+        <section id="habilitacoes" class="section container reveal">
+            <div class="section-head">
+                <span class="eyebrow">— Habilitações</span>
+                <h2>Formação</h2>
+            </div>
+            <div class="grid">
+                <div class="card"><h3>Licenciatura / Mestrado</h3></div>
+                <div class="card"><h3>Certificações Profissionais</h3></div>
+                <div class="card"><h3>Especializações Técnicas</h3></div>
+            </div>
+        </section>
+        -->
 
-    <section id="cursos" class="section container reveal">
-        <h3>Cursos Lecionados 📚</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Programação Lua<img src="assets/lua_logo.png" width="18" height="18"
-                        style="margin-left: 8px; vertical-align:-3px;"></h4>
-                <a href="https://www.udemy.com/course/cursos-ttech-lua/?referralCode=1E35E95B27F97B320115"
-                    class="btn-secondary">Descubra</a>
+        <section id="cursos" class="section container reveal">
+            <div class="section-head">
+                <span class="eyebrow">02 — Cursos</span>
+                <h2>Cursos lecionados</h2>
             </div>
-            <div class="card">
-                <h4>Programação C# <img src="assets/csharp_logo.png" width="18" height="18"
-                        style="margin-left: 8px; vertical-align:-3px;"></h4>
-                <a href="https://www.udemy.com/course/curso-de-programacao-c-sharp-completo/?referralCode=ADC5F420551A71470567"
-                    class="btn-secondary">Descubra</a>
+            <div class="grid">
+                <article class="card">
+                    <div>
+                        <div class="card-icon"><img src="assets/lua_logo.png" width="28" height="28" alt=""></div>
+                        <h3>Programação Lua</h3>
+                        <p class="card-meta">Curso · Udemy</p>
+                    </div>
+                    <a href="https://www.udemy.com/course/cursos-ttech-lua/?referralCode=1E35E95B27F97B320115"
+                        class="btn-secondary" target="_blank" rel="noopener noreferrer">Descubra <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="card-icon"><img src="assets/csharp_logo.png" width="28" height="28" alt=""></div>
+                        <h3>Programação C#</h3>
+                        <p class="card-meta">Curso · Udemy</p>
+                    </div>
+                    <a href="https://www.udemy.com/course/curso-de-programacao-c-sharp-completo/?referralCode=ADC5F420551A71470567"
+                        class="btn-secondary" target="_blank" rel="noopener noreferrer">Descubra <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="card-icon"><img src="assets/eng_informatica_logo.png" width="28" height="28" alt=""></div>
+                        <h3>Engenharia Informática</h3>
+                        <p class="card-meta">Curso · Udemy</p>
+                    </div>
+                    <a href="https://www.udemy.com/course/engenharia-informatica/?referralCode=6A7386B9BCD37EFAB88C"
+                        class="btn-secondary" target="_blank" rel="noopener noreferrer">Descubra <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="card-icon"><img src="assets/fisica_logo.png" width="28" height="28" alt=""></div>
+                        <h3>Curso de Física</h3>
+                        <p class="card-meta">Curso · Udemy</p>
+                    </div>
+                    <a href="https://www.udemy.com/course/curso-de-fisica-pedro/?referralCode=9C39F249F3D492D9D61F"
+                        class="btn-secondary" target="_blank" rel="noopener noreferrer">Descubra <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </article>
             </div>
-            <div class="card">
-                <h4>Engenharia Informática <img src="assets/eng_informatica_logo.png" width="18" height="18"
-                        style="margin-left: 8px; vertical-align:-3px;"></h4>
-                <a href="https://www.udemy.com/course/engenharia-informatica/?referralCode=6A7386B9BCD37EFAB88C"
-                    class="btn-secondary">Descubra</a>
-            </div>
-            <div class="card">
-                <h4>Curso de Física <img src="assets/fisica_logo.png" width="18" height="18"
-                        style="margin-left: 8px; vertical-align:-3px;"></h4>
-                <a href="https://www.udemy.com/course/curso-de-fisica-pedro/?referralCode=9C39F249F3D492D9D61F"
-                    class="btn-secondary">Descubra</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- A ser adicionado futuramente
-    <section id="obras" class="section container reveal">
-        <h3>Obras 📖</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Publicação / Livro 1</h4><a href="https://www.youtube.com/@ttech_/videos" class="btn-secondary">Descubra</a>
+        <!-- A ser adicionado futuramente
+        <section id="obras" class="section container reveal">
+            <div class="section-head">
+                <span class="eyebrow">— Obras</span>
+                <h2>Publicações</h2>
             </div>
-            <div class="card">
-                <h4>Publicação / Livro 2</h4><a href="https://www.youtube.com/@ttech_/videos" class="btn-secondary">Descubra</a>
+            <div class="grid">
+                <article class="card">
+                    <div><h3>Publicação / Livro 1</h3></div>
+                    <a href="#" class="btn-secondary">Descubra <span class="arrow" aria-hidden="true">→</span></a>
+                </article>
             </div>
-        </div>
-    </section>
-    -->
+        </section>
+        -->
 
-    <section id="projetos" class="section container reveal">
-        <h3>Projetos 💡</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>TTech Inc - Youtube</h4><a href="https://www.youtube.com/@ttech_/videos"
-                    class="btn-secondary">Descubra</a>
+        <section id="projetos" class="section container reveal">
+            <div class="section-head">
+                <span class="eyebrow">03 — Projetos</span>
+                <h2>Projetos</h2>
             </div>
-            <div class="card">
-                <h4>Em desenvolvimento...</h4><a href="index.html" class="btn-secondary">Brevemente</a>
+            <div class="grid">
+                <article class="card">
+                    <div>
+                        <div class="card-title-row">
+                            <img src="assets/youtube.png" width="22" height="22" alt="">
+                            <h3>TTech Inc - Youtube</h3>
+                        </div>
+                        <p class="card-meta">Canal · Vídeos</p>
+                    </div>
+                    <a href="https://www.youtube.com/@ttech_/videos" class="btn-secondary" target="_blank"
+                        rel="noopener noreferrer">Descubra <span class="arrow" aria-hidden="true">→</span></a>
+                </article>
+                <article class="card card--soon">
+                    <div>
+                        <div class="card-title-row">
+                            <h3>Em desenvolvimento...</h3>
+                        </div>
+                        <p class="card-meta">Novo projeto a caminho</p>
+                    </div>
+                    <span class="btn-secondary btn-disabled" aria-disabled="true">Brevemente</span>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="artigos" class="section articles-section reveal">
-        <div class="container articles-box">
-            <h3>Artigos e Publicações 📰</h3>
-            <p>Aceda à página dedicada aos meus artigos, reflexões e conteúdos especializados.</p>
-            <a href="pagina_artigos/artigos.html" class="btn-primary">Ver artigos</a>
-        </div>
-    </section>
+        <section id="artigos" class="section articles-section reveal">
+            <div class="container">
+                <div class="articles-box">
+                    <span class="eyebrow">04 — Artigos</span>
+                    <h2>Artigos e Publicações 📰</h2>
+                    <p>Aceda à página dedicada aos meus artigos, reflexões e conteúdos especializados.</p>
+                    <a href="pagina_artigos/artigos.html" class="btn-primary">Ver artigos <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
 
-    <section id="contacto" class="section contact-section reveal">
-        <div class="contact-card">
-            <h3>Contacto 📬</h3>
-            <p>contacto@pedro-oliveira.dev</p>
-            <a href="https://discord.gg/ntJY7cnc7T" class="btn-primary">Comunidade no Discord
-                <img src="assets/DiscordLogo.png" width="18" height="18"
-                    style="margin-right:8px; margin-left: 3px; vertical-align:-3px;">
-            </a>
-        </div>
-    </section>
+        <section id="contacto" class="section contact-section reveal">
+            <div class="container">
+                <div class="contact-card">
+                    <span class="eyebrow">05 — Fale comigo</span>
+                    <h2>Contacto 📬</h2>
+                    <div class="contact-email">
+                        <a href="mailto:contacto@pedro-oliveira.dev">contacto@pedro-oliveira.dev</a>
+                        <button type="button" class="copy-btn" data-copy="contacto@pedro-oliveira.dev">Copiar</button>
+                    </div>
+                    <div>
+                        <a href="https://discord.gg/ntJY7cnc7T" class="btn-primary" target="_blank"
+                            rel="noopener noreferrer">
+                            <img class="btn-icon" src="assets/DiscordLogo.png" width="18" height="18" alt="">
+                            Comunidade no Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="footer">
         <div class="container">
             <p>© 2026 Pedro Oliveira. Todos os direitos reservados.</p>
+            <a href="#top">Voltar ao topo ↑</a>
         </div>
     </footer>
 
