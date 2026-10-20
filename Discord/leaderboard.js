@@ -34,7 +34,7 @@ function celula(texto, classe) {
 function criarLinha(user, posicao) {
     const medalhas = { 1: "🥇", 2: "🥈", 3: "🥉" };
     const tr = document.createElement("tr");
-    if (posicao <= 3 && ordenacaoAtual) tr.className = `top-${posicao}`;
+    if (posicao <= 3) tr.className = `top-${posicao}`;
 
     const marcado = (coluna) => (coluna === ordenacaoAtual ? " is-sorted" : "");
 

@@ -148,10 +148,14 @@
     color: var(--muted);
 }
 
-/* pódio */
-.leaderboard-table tbody tr.top-1 { background: linear-gradient(90deg, rgba(250, 204, 21, .10), transparent 70%); }
-.leaderboard-table tbody tr.top-2 { background: linear-gradient(90deg, rgba(203, 213, 225, .08), transparent 70%); }
-.leaderboard-table tbody tr.top-3 { background: linear-gradient(90deg, rgba(251, 146, 60, .09), transparent 70%); }
+/* pódio: faixa lateral + tom da cor da medalha (prata mais clara para se ver no fundo azul) */
+.leaderboard-table tbody tr.top-1 { background: linear-gradient(90deg, rgba(250, 204, 21, .16), rgba(250, 204, 21, .03) 75%); }
+.leaderboard-table tbody tr.top-2 { background: linear-gradient(90deg, rgba(226, 232, 240, .17), rgba(226, 232, 240, .03) 75%); }
+.leaderboard-table tbody tr.top-3 { background: linear-gradient(90deg, rgba(251, 146, 60, .18), rgba(251, 146, 60, .03) 75%); }
+
+.leaderboard-table tbody tr.top-1 td:first-child { box-shadow: inset 3px 0 0 #facc15; }
+.leaderboard-table tbody tr.top-2 td:first-child { box-shadow: inset 3px 0 0 #e2e8f0; }
+.leaderboard-table tbody tr.top-3 td:first-child { box-shadow: inset 3px 0 0 #fb923c; }
 
 /* destaque da coluna ordenada */
 .leaderboard-table td.is-sorted {
