@@ -1,6 +1,8 @@
 /* Leaderboard do servidor de Discord
    Pede os dados a leaderboard.php?sort=<coluna>&page=<n> (25 por página)
-   e espera um array JSON com: Nome, NIVEL, XP, NumProjetos, Bumps. */
+   e espera um array JSON com: Nome, NIVEL, XP, NumProjetos, Bumps. 
+   da proxima vez que isto for alterado ter atenção ao funcionamento disto, eu não me lembro mais disto que escrevi e não quero me lembrar 
+   */
 
 const POR_PAGINA = 25;
 const COLUNAS = ["NIVEL", "XP", "NumProjetos", "Bumps"];
